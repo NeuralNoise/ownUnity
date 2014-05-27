@@ -13,3 +13,13 @@ All you can configure is done in a file called config.ini.php, which is self-exp
 
 After putting these files on your host, create a folder called _files_ beside them and give write-permissions to it.
 
+
+##Screenshots
+
+![Message-Stream](http://www.databay.de/kmco/ownunity_01.png)
+
+![Detailed view](http://www.databay.de/kmco/ownunity_02.png)
+
+![Editor](http://www.databay.de/kmco/ownunity_03.png)
+
+

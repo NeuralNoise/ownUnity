@@ -16,10 +16,14 @@ After putting these files on your host, create a folder called _files_ beside th
 
 ##Screenshots
 
+__The message-stream__
 ![Message-Stream](http://www.databay.de/kmco/ownunity_01.png)
 
+__Detail-view of a message__
 ![Detailed view](http://www.databay.de/kmco/ownunity_02.png)
 
+__Editor for a message__ 
+use markdown to format your document
 ![Editor](http://www.databay.de/kmco/ownunity_03.png)
 
 

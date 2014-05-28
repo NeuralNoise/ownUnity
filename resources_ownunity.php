@@ -224,6 +224,7 @@ class profile {
 		return $ctc;
 	}
 	public function getContactsKeys() {
+
 		$path = $this->getUserDir(me());
 		$d = glob($path.'/*.connected');
 		if($d==false) return array();
@@ -442,6 +443,22 @@ class profile {
 		
 		return true;
 	}
+
+    public function loginByFeedKey($key) {
+        $f = glob($this->path.'/*_user');
+
+        for($i=0;$i<count($f);$i++) {
+            $data = json_decode(file_get_contents($f[$i].'/0.user'), true);
+            #vd($data);
+            if(!isset($data["feedKey"])) continue;
+            if($data["feedKey"]==$key) {
+                $this->loginUserByFilename($f[$i]);
+                return true;
+            }
+        }
+        return false;
+    }
+
 	public function loginByCookieValue($userkey) {
 		$f = glob($this->path.'/*_'.$userkey.'_user');
 		if(count($f)!=1) return false;
@@ -492,6 +509,12 @@ class profile {
 		}
 		// }}}
 	}
+
+    public function createFeedKey() {
+        $data = array("feedKey" => md5(uniqid(rand()).microtime(true)));
+        $this->setData($data);
+        return $data["feedKey"];
+    }
 }
 ?>
 <?php
@@ -827,18 +850,23 @@ class post {
 				$path = $f[0];
 			}
 		}
-
+#echo $path;exit;
 		$this->path = $path;
 		$this->data = json_decode(file_get_contents($path.'/0.post'), true);
+        #echo "<pre>";var_dump($this->data );exit;
 		if(file_exists($path.'/tree.json')) {
 			$T = json_decode(file_get_contents($path.'/tree.json'), true);
 		} else $T = array();
 
+        if(!is_array($this->data["data"]["recipients"])) $this->data["data"]["recipients"] = explode(",", $this->data["data"]["recipients"]);
 		$this->data["data"]["recipients"] = array_unique($this->data["data"]["recipients"]);
+        #var_dump($this->data["data"]["recipients"]);exit;
 
 		$this->data["data"]["recipientNames"] = array();
 		$profil = new profile();
 		$ck = $profil->getContactsKeys();
+#        echo "<pre>";var_dump($this->data["data"]["recipients"]);
+#var_dump($ck);exit;
 		$rID = array();
 		$rN = array();
 		for($i=0;$i<count($this->data["data"]["recipients"]);$i++) {
@@ -931,9 +959,13 @@ class post {
 	public function addlocalfile($fn) {
 		$fn2 = fixname(basename($fn));
 		if(substr($fn2,0,5)!="file_") {
-			$fn2 = 'file_'.time()."_".$fn2;
-		}
+            $imageName = time()."_".$fn2;
+			$fn2 = 'file_'.$imageName;
+		} else {
+            $imageName = substr($fn2,5);
+        }
 		rename($fn, $this->path.'/'.$fn2);
+        return $imageName;
 	}
 
 	public function setTreelink($id, $group) {
@@ -1218,6 +1250,68 @@ class files {
 }
 ?>
 <?php
+class feed {
+
+    public $title = "RSS-Feed";
+    public $link = "";
+    public $descrpition = "";
+    public $nr = 0;
+
+    public $items = array();
+
+    public function __construct() {
+        $this->nr = 0;
+        $this->items = array();
+    }
+
+    public function rss() {
+        $rssfeed = '';
+        $rssfeed = '<'.'?xml version="1.0" encoding="utf-8"?'.'>';
+        $rssfeed .= '<rss version="2.0">';
+        $rssfeed .= '<channel>';
+        $rssfeed .= '<title>'.$this->title.'</title>';
+        $rssfeed .= '<link>'.$this->link.'</link>';
+        $rssfeed .= '<description>'.$this->description.'</description>';
+        #$rssfeed .= '<language>de</language>';
+        #$rssfeed .= '<copyright></copyright>';
+
+
+
+        for($i=0;$i<count($this->items);$i++) {
+            $line = $this->items[$i];
+            $rssfeed .= '<item>';
+            $rssfeed .= '<title>' . $line["title"] . '</title>';
+            $rssfeed .= '<description>' . $line["description"] . '</description>';
+            $rssfeed .= '<link>' . $line["link"] . '</link>';
+            $rssfeed .= '<pubDate>' . date("D, d M Y H:i:s O", strtotime($line["date"])) . '</pubDate>';
+            $rssfeed .= '</item>';
+        }
+
+        $rssfeed .= '</channel>';
+        $rssfeed .= '</rss>';
+        return $rssfeed;
+    }
+
+    public function addItem() {
+        $this->items[] = array();
+        $this->nr = count($this->items)-1;
+    }
+
+    public function setTitle($title) {
+        $this->items[$this->nr]["title"] = $title;
+    }
+    public function setDescription($desc) {
+        $this->items[$this->nr]["description"] = $desc;
+    }
+    public function setLink($link) {
+        $this->items[$this->nr]["link"] = $link;
+    }
+    public function setDate($date) {
+        $this->items[$this->nr]["date"] = $date;
+    }
+
+}
+?><?php
 class comment {
 	public $data = array();
 	public function __construct($fn) {
@@ -4080,7 +4174,7 @@ y©¢©ßØá£∂ñ[û0ó∫ºG¥ë®¶PÜzú«h…æ°ƒòkz¬ió…yé†— h|z’híG›Ñ‚V≈¢ØÅÈ ÌπÎ\hÁ[ØéÔ «§
           </button>
           
           
-          <a class="navbar-brand" href="<?= FILENAME; ?>"><?= getConfigValue("title", "KMCo");?></a>
+          <a class="navbar-brand" href="<?= FILENAME; ?>"><?= getConfigValue("title", "ownUnity");?></a>
           
 
         </div>
@@ -4135,6 +4229,7 @@ y©¢©ßØá£∂ñ[û0ó∫ºG¥ë®¶PÜzú«h…æ°ƒòkz¬ió…yé†— h|z’híG›Ñ‚V≈¢ØÅÈ ÌπÎ\hÁ[ØéÔ «§
 		      <ul class="dropdown-menu">
 			 <li><a href="<?= FILENAME;?>?view=profil"><?= trans("Profil", "Profile");?></a></li>
 			 <li><a href="<?= FILENAME;?>?view=contacts"><?= trans("Kontakte", "Contacts");?></a></li>
+                  <li><a href="<?= FILENAME;?>?view=notifications"><?= trans("Mitteilungen", "Notifications");?></a></li>
 			 <?php if($_COOKIE[SESSKEY."language"]=="de") { ?>
 			 	<li><a href="<?= FILENAME;?>?lang=en">english</a></li>
 			 <?php } else { ?>
@@ -4554,6 +4649,45 @@ $profil = new profile();
 <?php } ?>
 </ul>
 
+<h1><?= trans("Mitteilungen", "Notifications");?></h1>
+
+
+<div class="panel panel-primary">
+
+    <div class="panel-heading">RSS-Feed</div>
+
+    <div class="panel-body">
+
+        <?php
+        if($_GET["create"]==1) {
+            $profilData["feedKey"] = $profil->createFeedKey();
+            #vd($profileData);
+        }
+        ?>
+
+        <?php if(!isset($profilData["feedKey"]) || $profilData["feedKey"]=="") { ?>
+
+            <a href="<?= FILENAME;?>?view=notifications&create=1"><?= trans("Feed-Link erzeugen", "create feed-link");?></a>
+
+        <?php } else { ?>
+
+
+            RSS 2.0: <a href="<?= "http://".$_SERVER['HTTP_HOST'].$_SERVER["SCRIPT_NAME"];?>?feed=<?= $profilData["feedKey"];?>"><?= "http://".$_SERVER['HTTP_HOST'].$_SERVER["SCRIPT_NAME"];?>?feed=<?= $profilData["feedKey"];?></a>
+
+            <br><br>
+            <a href="<?= FILENAME;?>?view=notifications&create=1" onclick="return confirm('<?= trans('macht bisherige Feed-Links ung√ºltig!', 'revokes older feed-links');?>');"><?= trans("neuen Feed-Link erzeugen", "create new feed-link");?></a>
+
+        <?php } ?>
+
+        <?php
+        #vd($_SERVER);
+        #vd($profilData);
+        ?>
+
+
+    </div>
+
+</div>
 <script>
 var whichView = "<?= $_REQUEST["group"];?>";
 </script>
@@ -5768,7 +5902,7 @@ var recentPostID = "<?= $P[count($P)-1]->data["id"];?>";
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="easy to install private community system">
 <meta name="author" content="Aresch Yavari">
-<meta name="version" content="1.20140526160033">
+<meta name="version" content="1.20140528094835">
 <title><?= getConfigValue("pagetitle", "My own hosted community");?></title>
 <link rel="stylesheet" href="<?= FILENAME;?>?RES=resources/css/bootstrap.min.css">
 <link rel="stylesheet" href="<?= FILENAME;?>?RES=resources/css/styles.css">
@@ -5876,6 +6010,14 @@ var lastChange = <?= time()*1000;?>;
 				if(!is_array($tempfn)) $tempfn = array();
 				$tempfn[] = $fn = myPath."/files/ownunity/cache/tmp_".md5(microtime(true).rand()).".php"; 
 				file_put_contents($fn, getRes("templates/groups.tpl")); 
+				include $fn;
+				unlink(array_pop($tempfn));
+				?>
+                        <?php } else if(isset($_GET["view"]) && $_GET["view"]=="notifications") { ?>
+                            <?php
+				if(!is_array($tempfn)) $tempfn = array();
+				$tempfn[] = $fn = myPath."/files/ownunity/cache/tmp_".md5(microtime(true).rand()).".php"; 
+				file_put_contents($fn, getRes("templates/notifications.tpl")); 
 				include $fn;
 				unlink(array_pop($tempfn));
 				?>

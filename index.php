@@ -1,5 +1,5 @@
 <?php
-define("myPath", dirname(__FILE__));define("appVersion", "1.10");$RESOURCES = json_decode("{\"php\\/classes\\/class.tree.php\":[15,4326],\"php\\/classes\\/class.profile.php\":[4341,9368],\"php\\/classes\\/class.posts.php\":[13709,8454],\"php\\/classes\\/class.postfile.php\":[22163,361],\"php\\/classes\\/class.post.php\":[22524,3681],\"php\\/classes\\/class.image.php\":[26205,1982],\"php\\/classes\\/class.history.php\":[28187,1281],\"php\\/classes\\/class.groups.php\":[29468,737],\"php\\/classes\\/class.group.php\":[30205,1405],\"php\\/classes\\/class.files.php\":[31610,930],\"php\\/classes\\/class.comment.php\":[32540,150],\"php\\/classes\\/class.Markdown.php\":[32690,41571],\"templates\\/onepost.tpl\":[74261,5672],\"templates\\/fullpost.tpl\":[79933,3059],\"resources\\/css\\/bootstrap.min.css\":[82992,97399],\"resources\\/css\\/styles.css\":[180391,1464],\"resources\\/css\\/tree.css\":[181855,1310],\"resources\\/images\\/favicon.ico\":[183165,67646],\"resources\\/js\\/jquery.js\":[250811,93106],\"resources\\/js\\/bootstrap.min.js\":[343917,27726],\"resources\\/js\\/script.js\":[371643,10097],\"resources\\/fonts\\/glyphicons-halflings-regular.eot\":[381740,14079],\"resources\\/fonts\\/glyphicons-halflings-regular.svg\":[395819,63157],\"resources\\/fonts\\/glyphicons-halflings-regular.ttf\":[458976,29512],\"resources\\/fonts\\/glyphicons-halflings-regular.woff\":[488488,16448],\"resources\\/images\\/person.png\":[504936,3005],\"resources\\/images\\/person-big.png\":[507941,4677],\"resources\\/images\\/person-medium.png\":[512618,1784],\"resources\\/images\\/person-small.png\":[514402,602],\"resources\\/images\\/person-mini.png\":[515004,445],\"resources\\/images\\/loader.gif\":[515449,3208],\"templates\\/navbar.tpl\":[518657,3921],\"templates\\/register.tpl\":[522578,2229],\"templates\\/login.tpl\":[524807,1377],\"templates\\/info_de.tpl\":[526184,10],\"templates\\/info_en.tpl\":[526194,10],\"templates\\/homepage.tpl\":[526204,984],\"templates\\/profil.tpl\":[527188,4969],\"templates\\/search.tpl\":[532157,1402],\"templates\\/contacts.tpl\":[533559,830],\"templates\\/groups.tpl\":[534389,1743],\"templates\\/group.tpl\":[536132,13041],\"templates\\/userprofil.tpl\":[549173,2495],\"templates\\/full.tpl\":[551668,10150],\"templates\\/overview.tpl\":[561818,17668],\"templates\\/main2.tpl\":[579486,5487]}", true);
+define("myPath", dirname(__FILE__));define("appVersion", "1.35");$RESOURCES = json_decode("{\"php\\/classes\\/class.tree.php\":[15,4326],\"php\\/classes\\/class.profile.php\":[4341,10002],\"php\\/classes\\/class.posts.php\":[14343,8454],\"php\\/classes\\/class.postfile.php\":[22797,361],\"php\\/classes\\/class.post.php\":[23158,4160],\"php\\/classes\\/class.image.php\":[27318,1982],\"php\\/classes\\/class.history.php\":[29300,1281],\"php\\/classes\\/class.groups.php\":[30581,737],\"php\\/classes\\/class.group.php\":[31318,1405],\"php\\/classes\\/class.files.php\":[32723,930],\"php\\/classes\\/class.feed.php\":[33653,1811],\"php\\/classes\\/class.comment.php\":[35464,150],\"php\\/classes\\/class.Markdown.php\":[35614,41571],\"templates\\/onepost.tpl\":[77185,5672],\"templates\\/fullpost.tpl\":[82857,3059],\"resources\\/css\\/bootstrap.min.css\":[85916,97399],\"resources\\/css\\/styles.css\":[183315,1464],\"resources\\/css\\/tree.css\":[184779,1310],\"resources\\/images\\/favicon.ico\":[186089,67646],\"resources\\/js\\/jquery.js\":[253735,93106],\"resources\\/js\\/bootstrap.min.js\":[346841,27726],\"resources\\/js\\/script.js\":[374567,10097],\"resources\\/fonts\\/glyphicons-halflings-regular.eot\":[384664,14079],\"resources\\/fonts\\/glyphicons-halflings-regular.svg\":[398743,63157],\"resources\\/fonts\\/glyphicons-halflings-regular.ttf\":[461900,29512],\"resources\\/fonts\\/glyphicons-halflings-regular.woff\":[491412,16448],\"resources\\/images\\/person.png\":[507860,3005],\"resources\\/images\\/person-big.png\":[510865,4677],\"resources\\/images\\/person-medium.png\":[515542,1784],\"resources\\/images\\/person-small.png\":[517326,602],\"resources\\/images\\/person-mini.png\":[517928,445],\"resources\\/images\\/loader.gif\":[518373,3208],\"templates\\/navbar.tpl\":[521581,4047],\"templates\\/register.tpl\":[525628,2229],\"templates\\/login.tpl\":[527857,1377],\"templates\\/info_de.tpl\":[529234,10],\"templates\\/info_en.tpl\":[529244,10],\"templates\\/homepage.tpl\":[529254,984],\"templates\\/profil.tpl\":[530238,4969],\"templates\\/search.tpl\":[535207,1402],\"templates\\/contacts.tpl\":[536609,830],\"templates\\/groups.tpl\":[537439,1743],\"templates\\/notifications.tpl\":[539182,1186],\"templates\\/group.tpl\":[540368,13041],\"templates\\/userprofil.tpl\":[553409,2495],\"templates\\/full.tpl\":[555904,10150],\"templates\\/overview.tpl\":[566054,17668],\"templates\\/main2.tpl\":[583722,5887]}", true);
 function getRes($resname) { global $RESOURCES;$R = $RESOURCES[$resname];
 $fp = fopen(dirname(__FILE__)."/resources_ownunity.php", "r");
 fseek($fp, $R[0]);
@@ -507,6 +507,39 @@ setS("user", "");
 setS("pubkey", "");
 setCookie(SESSKEY."user", "", time());
 }}
+if(isset($_REQUEST["feed"]) && $_REQUEST["feed"]!="") {
+$save["userFile"] = getS("userFile");
+$save["user"] = getS("user");
+$save["userName"] = getS("userName");
+$save["pubkey"] = getS("pubkey");
+$profil = new profile();
+$res = $profil->loginByFeedKey($_REQUEST["feed"]);
+if($res==false) {sleep(5);die("wrong key");}
+$rss = new feed();
+$rss->title = getConfigValue("title", "ownUnity");
+$rss->link = "http://".$_SERVER['HTTP_HOST'].$_SERVER["SCRIPT_NAME"];
+$posts = new posts();
+$P = $posts->recent();
+for($i=0;$i<count($P);$i++) {
+$sender = $profil->get($P[$i]->data["user"]);
+$nr = $rss->addItem();
+$title = explode("\n", trim($P[$i]->data['data']["text"]));
+$title = $title[0];
+$title = str_replace("#", "", $title);
+if(strlen($title)>80) $title = substr($title,0,80)."...";
+$title = $sender["name"].": ".$title;
+$rss->setTitle($title);
+$rss->setDate($P[$i]->data["data"]["date"]);
+$rss->setLink($rss->link.'?full='.$P[$i]->data['id']);
+}
+header("content-type: application/rss+xml");
+echo $rss->rss();
+setS("userFile", $save["userFile"]);
+setS("user", $save["user"]);
+setS("userName", $save["userName"]);
+setS("pubkey", $save["pubkey"]);
+exit;
+}
 if(isset($_REQUEST["action"]) && $_REQUEST["action"]!="") {
 if(me()=="") die("not logged in!");
 if($_REQUEST["action"]=="isnew") {
@@ -777,6 +810,15 @@ $group = $_REQUEST["group"];
 $group = "own";
 }
 $postpath = $posts->save($data, $group, me(), $_REQUEST["newformrecipienttype"], $_REQUEST["recipients"]);
+if(isset($_REQUEST["img"])) {
+// Bild das aus der App mitgesendet wird als Base64
+$fn = "files/kmco/".microtime(true).".jpg";
+file_put_contents($fn, base64_decode($_REQUEST["img"]));
+$P = new post($postpath);
+$imageName = $P->addlocalfile($fn);
+$P = new post($postpath);
+$P->update($P->data["data"]["text"]."\n[img:".$imageName."]");
+}
 $anz = preg_match_all("/\[img:(.*?)\]/", $text, $files );
 if($anz>0) {
 $path = checkfordir("files/cache");
@@ -796,12 +838,6 @@ if(file_Exists($fn)) {
 $P = new post($postpath);
 $P->addlocalfile($fn);
 }}
-}
-if(isset($_REQUEST["img"])) {
-$fn = "files/kmco/".microtime(true).".jpg";
-file_put_contents($fn, base64_decode($_REQUEST["img"]));
-$P = new post($postpath);
-$P->addlocalfile($fn);
 }
 /*
 BildTest!

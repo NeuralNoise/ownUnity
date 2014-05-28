@@ -27,3 +27,10 @@ use markdown to format your document
 ![Editor](http://www.databay.de/kmco/ownunity_03.png)
 
 
+##Features
+
+* connect with your friends and family
+* define who can see your post
+* define who can comment on your post
+* define who can see the comments on your post
+* RSS-Feed of your message-stream

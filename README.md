@@ -34,3 +34,9 @@ use markdown to format your document
 * define who can comment on your post
 * define who can see the comments on your post
 * RSS-Feed of your message-stream
+
+##What's coming?
+
+* End-to-end encryption using [OpenPGP.js](http://openpgpjs.org/)
+* Firefox-AddOn and Chrome-Extension for notification
+* Bookmarklet for posting urls and page-content

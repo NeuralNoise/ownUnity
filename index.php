@@ -1,5 +1,5 @@
 <?php
-define("myPath", dirname(__FILE__));define("appVersion", "1.35");$RESOURCES = json_decode("{\"php\\/classes\\/class.tree.php\":[15,4326],\"php\\/classes\\/class.profile.php\":[4341,10002],\"php\\/classes\\/class.posts.php\":[14343,8454],\"php\\/classes\\/class.postfile.php\":[22797,361],\"php\\/classes\\/class.post.php\":[23158,4160],\"php\\/classes\\/class.image.php\":[27318,1982],\"php\\/classes\\/class.history.php\":[29300,1281],\"php\\/classes\\/class.groups.php\":[30581,737],\"php\\/classes\\/class.group.php\":[31318,1405],\"php\\/classes\\/class.files.php\":[32723,930],\"php\\/classes\\/class.feed.php\":[33653,1811],\"php\\/classes\\/class.comment.php\":[35464,150],\"php\\/classes\\/class.Markdown.php\":[35614,41571],\"templates\\/onepost.tpl\":[77185,5672],\"templates\\/fullpost.tpl\":[82857,3059],\"resources\\/css\\/bootstrap.min.css\":[85916,97399],\"resources\\/css\\/styles.css\":[183315,1464],\"resources\\/css\\/tree.css\":[184779,1310],\"resources\\/images\\/favicon.ico\":[186089,67646],\"resources\\/js\\/jquery.js\":[253735,93106],\"resources\\/js\\/bootstrap.min.js\":[346841,27726],\"resources\\/js\\/script.js\":[374567,10097],\"resources\\/fonts\\/glyphicons-halflings-regular.eot\":[384664,14079],\"resources\\/fonts\\/glyphicons-halflings-regular.svg\":[398743,63157],\"resources\\/fonts\\/glyphicons-halflings-regular.ttf\":[461900,29512],\"resources\\/fonts\\/glyphicons-halflings-regular.woff\":[491412,16448],\"resources\\/images\\/person.png\":[507860,3005],\"resources\\/images\\/person-big.png\":[510865,4677],\"resources\\/images\\/person-medium.png\":[515542,1784],\"resources\\/images\\/person-small.png\":[517326,602],\"resources\\/images\\/person-mini.png\":[517928,445],\"resources\\/images\\/loader.gif\":[518373,3208],\"templates\\/navbar.tpl\":[521581,4047],\"templates\\/register.tpl\":[525628,2229],\"templates\\/login.tpl\":[527857,1377],\"templates\\/info_de.tpl\":[529234,10],\"templates\\/info_en.tpl\":[529244,10],\"templates\\/homepage.tpl\":[529254,984],\"templates\\/profil.tpl\":[530238,4969],\"templates\\/search.tpl\":[535207,1402],\"templates\\/contacts.tpl\":[536609,830],\"templates\\/groups.tpl\":[537439,1743],\"templates\\/notifications.tpl\":[539182,1186],\"templates\\/group.tpl\":[540368,13041],\"templates\\/userprofil.tpl\":[553409,2495],\"templates\\/full.tpl\":[555904,10150],\"templates\\/overview.tpl\":[566054,17668],\"templates\\/main2.tpl\":[583722,5887]}", true);
+define("myPath", dirname(__FILE__));define("appVersion", "1.592");$RESOURCES = json_decode("{\"php\\/classes\\/class.tree.php\":[15,4326],\"php\\/classes\\/class.profile.php\":[4341,12877],\"php\\/classes\\/class.posts.php\":[17218,8830],\"php\\/classes\\/class.postfile.php\":[26048,361],\"php\\/classes\\/class.post.php\":[26409,4188],\"php\\/classes\\/class.image.php\":[30597,1982],\"php\\/classes\\/class.history.php\":[32579,1281],\"php\\/classes\\/class.groups.php\":[33860,737],\"php\\/classes\\/class.group.php\":[34597,1405],\"php\\/classes\\/class.files.php\":[36002,930],\"php\\/classes\\/class.feed.php\":[36932,1811],\"php\\/classes\\/class.comment.php\":[38743,150],\"php\\/classes\\/class.Markdown.php\":[38893,42075],\"templates\\/onepost.tpl\":[80968,8497],\"templates\\/fullpost.tpl\":[89465,4093],\"resources\\/css\\/bootstrap.min.css\":[93558,97399],\"resources\\/css\\/styles.css\":[190957,1464],\"resources\\/css\\/tree.css\":[192421,1310],\"resources\\/images\\/favicon.ico\":[193731,67646],\"resources\\/images\\/ownunity.png\":[261377,5419],\"resources\\/js\\/jquery.js\":[266796,93106],\"resources\\/js\\/bootstrap.min.js\":[359902,27726],\"resources\\/js\\/script.js\":[387628,11395],\"resources\\/js\\/utils.js\":[399023,696],\"resources\\/js\\/json2.js\":[399719,17413],\"resources\\/js\\/jstorage.js\":[417132,17688],\"resources\\/js\\/openpgp.min.js\":[434820,222346],\"resources\\/js\\/crypto.js\":[657166,2449],\"templates\\/crypto_frameset.tpl\":[659615,880],\"resources\\/fonts\\/glyphicons-halflings-regular.eot\":[660495,14079],\"resources\\/fonts\\/glyphicons-halflings-regular.svg\":[674574,63157],\"resources\\/fonts\\/glyphicons-halflings-regular.ttf\":[737731,29512],\"resources\\/fonts\\/glyphicons-halflings-regular.woff\":[767243,16448],\"resources\\/images\\/person.png\":[783691,3005],\"resources\\/images\\/person-big.png\":[786696,4677],\"resources\\/images\\/person-medium.png\":[791373,1784],\"resources\\/images\\/person-small.png\":[793157,602],\"resources\\/images\\/person-mini.png\":[793759,445],\"resources\\/images\\/loader.gif\":[794204,3208],\"templates\\/navbar.tpl\":[797412,4423],\"templates\\/register.tpl\":[801835,2229],\"templates\\/login.tpl\":[804064,1541],\"templates\\/lost.tpl\":[805605,2202],\"templates\\/credentials.tpl\":[807807,2360],\"templates\\/info_de.tpl\":[810167,10],\"templates\\/info_en.tpl\":[810177,10],\"templates\\/homepage.tpl\":[810187,984],\"templates\\/profil.tpl\":[811171,5127],\"templates\\/search.tpl\":[816298,1402],\"templates\\/contacts.tpl\":[817700,830],\"templates\\/groups.tpl\":[818530,1743],\"templates\\/notifications.tpl\":[820273,1186],\"templates\\/crypto.tpl\":[821459,6185],\"templates\\/group.tpl\":[827644,15906],\"templates\\/userprofil.tpl\":[843550,2495],\"templates\\/full.tpl\":[846045,11184],\"templates\\/overview.tpl\":[857229,22751],\"templates\\/main2.tpl\":[879980,8382]}", true);
 function getRes($resname) { global $RESOURCES;$R = $RESOURCES[$resname];
 $fp = fopen(dirname(__FILE__)."/resources_ownunity.php", "r");
 fseek($fp, $R[0]);
@@ -237,6 +237,7 @@ include_once $fn;
 }}
 
 function prepareText($text, $obj=null) {
+if(stristr($text,'-BEGIN PGP MESSAGE-')) return "<div class='pgptext'>".$text."</div>";
 $app = preg_match_all("/\[app:(.*?)\]/", $text, $matches);
 if($app>0) {
 $apps = $matches[1];
@@ -282,6 +283,9 @@ for($i=0;$i<count($files[0]);$i++) {
 }}
 */
 return $text;
+}
+function make_links_clickable($text){
+return preg_replace('!(((f|ht)tp(s)?://)[-a-zA-Zа-яА-Я()0-9@:%_+.~#?&;//=]+)!i', '<a href="$1">$1</a>', $text);
 }
 function fixname($n) {
 $replaceChar = "_";
@@ -359,6 +363,7 @@ $data = array();
 $data["community"]["enableGroups"] = "no";
 $data["community"]["title"] = "My Community";
 $data["community"]["pagetitle"] = "My own hosted community";
+$data["community"]["absender"] = "info@".str_replace("www.", "", $_SERVER["HTTP_HOST"]);
 writeINI(dataDir.'/'.configIniFile, $data);
 }
 /*
@@ -448,20 +453,37 @@ $data = array("date" => date("Y-m-d H:i:s"),
 $P->save($data, "own", me(), "alle");
 $REG = true;
 } else {
-$ERR = "E-Mailadresse existiert schon!";
+$ERR = trans("E-Mailadresse existiert schon!", "email-address already exists");
 }}
 if($_GET["do"]=="login") {
 $profil = new profile();
 if(!$profil->exists($_POST['email'])) {
-$ERR = "Login nicht korrekt";
+$ERR = trans("Login nicht korrekt", "login not correct");
 } else {
 if($profil->login($_POST['email'], $_POST['password'])) {
 header("location: ".FILENAME);
 exit;
 } else {
-$ERR = "Login nicht korrekt";
+$ERR = trans("Login nicht korrekt", "login not correct");
 }}
 }
+if($_GET["do"]=="lost") {
+$profil = new profile();
+if($profil->createNewPassword($_POST['recover'])) {
+$LOST = true;
+} else {
+$ERR = trans("Konnte das Passwort nicht neu erstellen", "error creating a new password");
+}}
+if($_GET["do"]=="cred") {
+$profil = new profile();
+if($_POST['newpassword']!="" && $_POST['newpassword']==$_POST['newpassword2']) {
+if($profil->setNewPassword($_POST['oldpassword'], $_POST['newpassword'])) {
+$CRED = true;
+} else {
+$ERR = trans("Konnte das Passwort nicht setzen", "error setting new password");
+}} else {
+$ERR = trans("Konnte das Passwort nicht setzen", "error setting new password");
+}}
 if($_REQUEST["do"]=="ajaxlogin") {
 $res = array("result" => 0);
 $profil = new profile();
@@ -755,6 +777,32 @@ $res = array("result"=>1, "hits" => $T);
 echo json_encode($res);
 exit;
 }
+if($_REQUEST["action"]=="loadPubKeys") {
+$P = new profile();
+$C = $P->getContacts();
+$keys = array();
+$mine = $P->get();
+$keys["mine"] = array();
+for($j=0;$j<count($mine["pubkeys"]);$j++) {
+$keys["mine"][] = $mine["pubkeys"][$j];
+}
+for($i=0;$i<count($C);$i++) {
+$keys[$C[$i]["key"]] = array();
+for($j=0;$j<count($C[$i]["pubkeys"]);$j++) {
+$keys[$C[$i]["key"]][] = $C[$i]["pubkeys"][$j];
+}}
+$res = array("result"=>1, "pubkeys" => $keys);
+echo json_encode($res);
+exit;
+}
+if($_REQUEST["action"]=="setmypubkey") {
+$P = new profile();
+$P->removePubKey($_REQUEST["clientID"]);
+$P->addPubKey($_REQUEST["clientID"], $_REQUEST["pubkey"]);
+$res = array("result"=>1);
+echo json_encode($res);
+exit;
+}
 if($_REQUEST["action"]=="updatepost") {
 $P = new post("", $_REQUEST["id"]);
 $P->update($_REQUEST["textcontent"]);
@@ -795,10 +843,9 @@ echo json_encode($res);
 exit;
 }}
 if($_REQUEST["action"]=="newpost") {
-$text = htmlspecialchars($_POST["newposttext"]);
 $posts = new posts();
 $data = array("date" => date("Y-m-d H:i:s"),
-"text" => $text,
+"text" => $_POST["newposttext"],
 "newformrecipienttype"=> $_REQUEST["newformrecipienttype"],
 "recipients"=> $_REQUEST["recipients"],
 "newformcommenttype"=> $_REQUEST["newformcommenttype"],

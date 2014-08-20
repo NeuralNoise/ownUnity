@@ -1,5 +1,5 @@
 <?php
-define("myPath", dirname(__FILE__));define("appVersion", "1.592");$RESOURCES = json_decode("{\"php\\/classes\\/class.tree.php\":[15,4326],\"php\\/classes\\/class.profile.php\":[4341,12877],\"php\\/classes\\/class.posts.php\":[17218,8830],\"php\\/classes\\/class.postfile.php\":[26048,361],\"php\\/classes\\/class.post.php\":[26409,4188],\"php\\/classes\\/class.image.php\":[30597,1982],\"php\\/classes\\/class.history.php\":[32579,1281],\"php\\/classes\\/class.groups.php\":[33860,737],\"php\\/classes\\/class.group.php\":[34597,1405],\"php\\/classes\\/class.files.php\":[36002,930],\"php\\/classes\\/class.feed.php\":[36932,1811],\"php\\/classes\\/class.comment.php\":[38743,150],\"php\\/classes\\/class.Markdown.php\":[38893,42075],\"templates\\/onepost.tpl\":[80968,8497],\"templates\\/fullpost.tpl\":[89465,4093],\"resources\\/css\\/bootstrap.min.css\":[93558,97399],\"resources\\/css\\/styles.css\":[190957,1464],\"resources\\/css\\/tree.css\":[192421,1310],\"resources\\/images\\/favicon.ico\":[193731,67646],\"resources\\/images\\/ownunity.png\":[261377,5419],\"resources\\/js\\/jquery.js\":[266796,93106],\"resources\\/js\\/bootstrap.min.js\":[359902,27726],\"resources\\/js\\/script.js\":[387628,11395],\"resources\\/js\\/utils.js\":[399023,696],\"resources\\/js\\/json2.js\":[399719,17413],\"resources\\/js\\/jstorage.js\":[417132,17688],\"resources\\/js\\/openpgp.min.js\":[434820,222346],\"resources\\/js\\/crypto.js\":[657166,2449],\"templates\\/crypto_frameset.tpl\":[659615,880],\"resources\\/fonts\\/glyphicons-halflings-regular.eot\":[660495,14079],\"resources\\/fonts\\/glyphicons-halflings-regular.svg\":[674574,63157],\"resources\\/fonts\\/glyphicons-halflings-regular.ttf\":[737731,29512],\"resources\\/fonts\\/glyphicons-halflings-regular.woff\":[767243,16448],\"resources\\/images\\/person.png\":[783691,3005],\"resources\\/images\\/person-big.png\":[786696,4677],\"resources\\/images\\/person-medium.png\":[791373,1784],\"resources\\/images\\/person-small.png\":[793157,602],\"resources\\/images\\/person-mini.png\":[793759,445],\"resources\\/images\\/loader.gif\":[794204,3208],\"templates\\/navbar.tpl\":[797412,4423],\"templates\\/register.tpl\":[801835,2229],\"templates\\/login.tpl\":[804064,1541],\"templates\\/lost.tpl\":[805605,2202],\"templates\\/credentials.tpl\":[807807,2360],\"templates\\/info_de.tpl\":[810167,10],\"templates\\/info_en.tpl\":[810177,10],\"templates\\/homepage.tpl\":[810187,984],\"templates\\/profil.tpl\":[811171,5127],\"templates\\/search.tpl\":[816298,1402],\"templates\\/contacts.tpl\":[817700,830],\"templates\\/groups.tpl\":[818530,1743],\"templates\\/notifications.tpl\":[820273,1186],\"templates\\/crypto.tpl\":[821459,6185],\"templates\\/group.tpl\":[827644,15906],\"templates\\/userprofil.tpl\":[843550,2495],\"templates\\/full.tpl\":[846045,11184],\"templates\\/overview.tpl\":[857229,22751],\"templates\\/main2.tpl\":[879980,8382]}", true);
+define("myPath", dirname(__FILE__));define("appVersion", "1.692");$RESOURCES = json_decode("{\"php\\/classes\\/class.tree.php\":[15,4326],\"php\\/classes\\/class.profile.php\":[4341,12827],\"php\\/classes\\/class.posts.php\":[17168,9130],\"php\\/classes\\/class.postfile.php\":[26298,361],\"php\\/classes\\/class.post.php\":[26659,4188],\"php\\/classes\\/class.image.php\":[30847,1982],\"php\\/classes\\/class.history.php\":[32829,1384],\"php\\/classes\\/class.groups.php\":[34213,737],\"php\\/classes\\/class.group.php\":[34950,1405],\"php\\/classes\\/class.files.php\":[36355,930],\"php\\/classes\\/class.feed.php\":[37285,1811],\"php\\/classes\\/class.comment.php\":[39096,150],\"php\\/classes\\/class.SMTP.php\":[39246,25613],\"php\\/classes\\/class.PHPMailer.php\":[64859,74678],\"php\\/classes\\/class.Markdown.php\":[139537,43251],\"templates\\/fullmail.tpl\":[182788,6366],\"templates\\/onepost.tpl\":[189154,9469],\"templates\\/fullpost.tpl\":[198623,3404],\"resources\\/css\\/bootstrap.min.css\":[202027,97399],\"resources\\/css\\/styles.css\":[299426,1464],\"resources\\/css\\/tree.css\":[300890,1310],\"resources\\/images\\/favicon.ico\":[302200,67646],\"resources\\/images\\/ownunity.png\":[369846,5419],\"resources\\/js\\/jquery.js\":[375265,93106],\"resources\\/js\\/bootstrap.min.js\":[468371,27726],\"resources\\/js\\/script.js\":[496097,11395],\"resources\\/js\\/utils.js\":[507492,696],\"resources\\/js\\/json2.js\":[508188,17413],\"resources\\/js\\/jstorage.js\":[525601,17688],\"resources\\/js\\/openpgp.min.js\":[543289,222346],\"resources\\/js\\/crypto.js\":[765635,2995],\"templates\\/crypto_frameset.tpl\":[768630,880],\"resources\\/fonts\\/glyphicons-halflings-regular.eot\":[769510,14079],\"resources\\/fonts\\/glyphicons-halflings-regular.svg\":[783589,63157],\"resources\\/fonts\\/glyphicons-halflings-regular.ttf\":[846746,29512],\"resources\\/fonts\\/glyphicons-halflings-regular.woff\":[876258,16448],\"resources\\/images\\/person.png\":[892706,3005],\"resources\\/images\\/person-big.png\":[895711,4677],\"resources\\/images\\/person-medium.png\":[900388,1784],\"resources\\/images\\/person-small.png\":[902172,602],\"resources\\/images\\/person-mini.png\":[902774,445],\"resources\\/images\\/loader.gif\":[903219,3208],\"templates\\/navbar.tpl\":[906427,4423],\"templates\\/register.tpl\":[910850,2229],\"templates\\/login.tpl\":[913079,1617],\"templates\\/lost.tpl\":[914696,2202],\"templates\\/credentials.tpl\":[916898,2360],\"templates\\/info_de.tpl\":[919258,10],\"templates\\/info_en.tpl\":[919268,10],\"templates\\/homepage.tpl\":[919278,984],\"templates\\/profil.tpl\":[920262,8019],\"templates\\/search.tpl\":[928281,1402],\"templates\\/contacts.tpl\":[929683,830],\"templates\\/groups.tpl\":[930513,1743],\"templates\\/notifications.tpl\":[932256,1186],\"templates\\/crypto.tpl\":[933442,6185],\"templates\\/group.tpl\":[939627,16895],\"templates\\/userprofil.tpl\":[956522,2495],\"templates\\/sharepostemail.tpl\":[959017,3112],\"templates\\/editpost.tpl\":[962129,1211],\"templates\\/full.tpl\":[963340,8795],\"templates\\/overview.tpl\":[972135,23740],\"templates\\/main2.tpl\":[995875,8382]}", true);
 function getRes($resname) { global $RESOURCES;$R = $RESOURCES[$resname];
 $fp = fopen(dirname(__FILE__)."/resources_ownunity.php", "r");
 fseek($fp, $R[0]);
@@ -236,6 +236,27 @@ file_put_contents($fn, trim($classCode));
 include_once $fn;
 }}
 
+function sendMail($to, $subject, $body, $from, $fromname="", $header="") {
+$mail = new PHPMailer();  // create a new object
+$mail->IsSMTP(); // enable SMTP
+if($header!="") $mail->AddCustomHeader($header);
+//$mail->SMTPDebug = true;
+$mail->SMTPAuth = getMailConfigValue("SMTPAuth", 0);  // authentication enabled
+$mail->SMTPSecure = getMailConfigValue("SMTPSecure", ""); // secure transfer enabled REQUIRED for GMail
+$mail->Host = getMailConfigValue("SMTPserverhost", 'localhost');
+$mail->Port = getMailConfigValue("SMTPserverport", '25');
+$mail->CharSet = "utf-8";
+$mail->Username = getMailConfigValue("SMTPusername", "");
+$mail->Password = getMailConfigValue("SMTPpassword", "");
+$mail->SetFrom($from, $fromname);
+$mail->Subject = $subject;
+$mail->Body = $body;
+$mail->Sender = $from;
+$mail->IsHTML();
+$mail->AddAddress($to);
+//vd($mail);
+return $mail->Send();
+}
 function prepareText($text, $obj=null) {
 if(stristr($text,'-BEGIN PGP MESSAGE-')) return "<div class='pgptext'>".$text."</div>";
 $app = preg_match_all("/\[app:(.*?)\]/", $text, $matches);
@@ -260,6 +281,12 @@ $text = str_replace("[file:".substr($files[$i]->basename,5)."]", '/file:'.$i.'/'
 $text = Markdown::defaultTransform($text);
 if(count($img)>0) {
 for($i=0;$i<count($img);$i++) {
+if($_REQUEST["action"]=="shareemail") {
+$im = new image($img[$i]->file);
+$im->resize(600, 20000, false);
+$base64 = $im->getBase64();
+$imgcode = '<img src="'.$base64.'" style="max-width:600px;">';
+} else {
 $imgcode = "
 <div style='text-align:center;' id='img_".htmlid($obj->data["id"])."_".$i."'>".$img[$i]->basename."</div>
 <script>
@@ -268,6 +295,7 @@ openImageShow('img_". htmlid($obj->data["id"])."_".$i."', '". $obj->data["id"] .
 });
 </script>
 ";
+}
 $text = str_replace("/img:".$i."/", $imgcode, $text);
 }}
 if(count($files)>0) {
@@ -364,6 +392,12 @@ $data["community"]["enableGroups"] = "no";
 $data["community"]["title"] = "My Community";
 $data["community"]["pagetitle"] = "My own hosted community";
 $data["community"]["absender"] = "info@".str_replace("www.", "", $_SERVER["HTTP_HOST"]);
+$data["mail"]["SMTPserverhost"] = "localhost";
+$data["mail"]["SMTPserverport"] = "25";
+$data["mail"]["SMTPusername"] = "";
+$data["mail"]["SMTPpassword"] = "";
+$data["mail"]["SMTPAuth"] = 0;
+$data["mail"]["SMTPSecure"] = "";
 writeINI(dataDir.'/'.configIniFile, $data);
 }
 /*
@@ -380,6 +414,9 @@ $GLOBALCONFIG = array(
 file_put_contents($cfgFN, json_encode($GLOBALCONFIG));
 }
 */
+function getMailConfigValue($name, $default='') {
+return getINI(configIniFile, array("mail", $name), $default);
+}
 function getConfigValue($name, $default='') {
 return getINI(configIniFile, array("community", $name), $default);
 /*
@@ -564,6 +601,28 @@ exit;
 }
 if(isset($_REQUEST["action"]) && $_REQUEST["action"]!="") {
 if(me()=="") die("not logged in!");
+if($_REQUEST["action"]=="shareemail") {
+if(getConfigValue("communitysender", "")!="") {
+$profil = new profile();
+$profilData = $profil->get();
+ob_start();
+
+if(!is_array($tempfn)) $tempfn = array();
+$tempfn[] = $fn = myPath."/files/ownunity/cache/tmp_".md5(microtime(true).rand()).".php";
+file_put_contents($fn, getRes("templates/fullmail.tpl"));
+include $fn;
+unlink(array_pop($tempfn));
+
+$C = ob_get_clean();
+//echo $C;exit;
+for($i=0;$i<count($_POST["sharerecipient"]);$i++) {
+sendMail($_POST["sharerecipient"][$i], "[".getConfigValue("title", "ownUnity")."] - ".$_POST["sharesubject"], $C, getConfigValue("communitysender", ""), $profilData["email"], "Content-Type:text/html;charset=utf-8");
+}
+if($_REQUEST["view"]!="json") {
+header("location: ".FILENAME.'?full='.$_GET["full"]);
+exit;
+}}
+}
 if($_REQUEST["action"]=="isnew") {
 $path = checkfordir("posts");
 $fn = $path.'/'.$_REQUEST["whichview"].'_'.me().'.ping';
@@ -575,12 +634,16 @@ $pingid = file_get_contents($fn);
 if($_REQUEST["lastchange"]<$pingid) {
 $H = new history(me());
 if($last = $H->newerThan($_REQUEST["lastchange"]) ) {
+if($last["from"]!=me()) {
 $res = array("result" => 1,
 //"lastChange" => filemtime($fn),
 "lastChange" => "L".$last["mid"],
 "info" => $last["info"]
 );
+} else {
+$res = array("result" => 0);
 }}
+}
 /*
 if(file_exists($fn) && filemtime($fn)>$_REQUEST["lastchange"]) {
 $res = array("result" => 1, "lastChange" => filemtime($fn), "info" => "Neue ---");
@@ -843,6 +906,9 @@ echo json_encode($res);
 exit;
 }}
 if($_REQUEST["action"]=="newpost") {
+if(isset($_POST["newposttext"]["mine"])) {
+$text = htmlspecialchars($_POST["newposttext"]["mine"]);
+}
 $posts = new posts();
 $data = array("date" => date("Y-m-d H:i:s"),
 "text" => $_POST["newposttext"],
